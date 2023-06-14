@@ -33,14 +33,6 @@ class Banner extends ComponentShared
                     'required' => [
                         'message' => 'Speed is required'
                     ],
-                    'integer' => [
-                        'message' => 'The Number of Columns field should contain an integer value',
-                        'allowNegative' => false,
-                        'min' => [
-                            'value' => 0,
-                            'message' => 'Should be more than 0'
-                        ],
-                    ]
                 ]
             ],
             'reverse' => [

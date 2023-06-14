@@ -6,7 +6,7 @@
             <div class="marquee-wrapper">
                 {% for record in __SELF__.records %}
                     <div class="marquee-item">
-                        {{ record.title }}
+                        {{ record.message|raw }}
                     </div>
                 {% endfor %}
             </div>
