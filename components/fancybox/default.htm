@@ -1,0 +1,18 @@
+{% for record in __SELF__.records %}
+    <aside {% if not __SELF__.cookie %}data-fancybox-popup="{{ __SELF__.alias }}"{% endif %} style="display:none;">
+        <div class="grid {% if record.media is empty or record.content is empty %}g1{% else %}g2{% endif %}">
+            {% if record.media %}
+                {% if record.media.content_type in ['video/mp4'] %}
+                    <video class="media lazy" controls data-src="{{ record.media.path }}"></video>
+                {% else %}
+                    <img class="media lazy" data-src="{{ record.media.focus(1000, false, 'crop')}}" alt="" />
+                {% endif %}
+            {% endif %}
+            {% if record.content %}
+                <div class="text">
+                    {{ record.content|raw }}
+                </div>
+            {% endif %}
+        </div>
+    </aside>
+{% endfor %}

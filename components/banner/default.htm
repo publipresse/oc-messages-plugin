@@ -1,0 +1,15 @@
+{% if not __SELF__.cookie %}
+    {% set properties = __SELF__.properties %}
+    <aside class="marquee {{ __SELF__.alias }} relative text-center" x-data="{ open: true }" x-show="open">
+        <button type="button" class="marquee-btn col" data-request="{{ __SELF__.alias }}::onClose" @click="open = false">✖</button>
+        <div class="marquee3k" data-speed="{{ properties.speed }}" {% if properties.reverse %}data-reverse{% endif %} {% if properties.pause %}data-pausable="{{ properties.pause }}"{% endif %}>
+            <div class="marquee-wrapper">
+                {% for record in __SELF__.records %}
+                    <div class="marquee-item h4">
+                        {{ record.title }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </aside>
+{% endif %}

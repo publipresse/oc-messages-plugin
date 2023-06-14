@@ -1,0 +1,8 @@
+{
+    "name": "publipresse/messages-plugin",
+    "type": "october-plugin",
+    "description": "Display messages closable with cookies to your visitors",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
