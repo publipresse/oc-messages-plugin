@@ -5,7 +5,7 @@
         <div class="marquee3k" data-speed="{{ properties.speed }}" {% if properties.reverse %}data-reverse{% endif %} {% if properties.pause %}data-pausable="{{ properties.pause }}"{% endif %}>
             <div class="marquee-wrapper">
                 {% for record in __SELF__.records %}
-                    <div class="marquee-item h4">
+                    <div class="marquee-item">
                         {{ record.title }}
                     </div>
                 {% endfor %}
