@@ -3,12 +3,15 @@
     <aside class="marquee {{ __SELF__.alias }} relative text-center" x-data="{ open: true }" x-show="open">
         <button type="button" class="marquee-btn col" data-request="{{ __SELF__.alias }}::onClose" @click="open = false">✖</button>
         <div class="marquee3k" data-speed="{{ properties.speed }}" {% if properties.reverse %}data-reverse{% endif %} {% if properties.pause %}data-pausable="{{ properties.pause }}"{% endif %}>
-            <div class="marquee-wrapper">
-                {% for record in __SELF__.records %}
-                    <div class="marquee-item">
-                        {{ record.message|raw }}
-                    </div>
-                {% endfor %}
+            <div class="marquee-container">
+                <div class="marquee-wrapper row">
+                    {% for record in __SELF__.records %}
+                        <div class="row marquee-item">
+                            {{ record.message|raw }}
+                        </div>
+                    {% endfor %}
+                    <div clas="marquee-spacer"></div>
+                </div>
             </div>
         </div>
     </aside>
