@@ -1,3 +1,5 @@
 addEventListener('page:loaded', function() {
-    Marquee3k.init();
+    if (typeof Marquee3k != "undefined") {
+        Marquee3k.init();
+    }
 });
