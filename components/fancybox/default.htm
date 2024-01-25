@@ -3,9 +3,9 @@
         <div class="grid {% if record.media is empty or record.content is empty %}grid-1{% else %}grid-2{% endif %}">
             {% if record.media %}
                 {% if record.media.content_type in ['video/mp4'] %}
-                    <video class="media lazy" controls data-src="{{ record.media.path }}"></video>
+                    <video controls src="{{ record.media.path }}"></video>
                 {% else %}
-                    <img class="media lazy" data-src="{{ record.media.focus(1000, false, 'crop')}}" alt="" />
+                    {% partial 'image' image = record.media width = 1000 %}
                 {% endif %}
             {% endif %}
             {% if record.content %}
