@@ -18,8 +18,10 @@ class Fancybox extends ComponentShared {
 
     public function onRun() {
         parent::onRun();
-        $this->page->addCss('assets/vendor/fancybox/fancybox/fancybox.css');
-        $this->page->addJs('assets/vendor/fancybox/fancybox/fancybox.umd.js', ['defer' => true]);
-        $this->page->addJs('/plugins/publipresse/messages/assets/fancybox.js', ['defer' => true]);
+        if($this->records->count() > 0) {
+            $this->page->addCss('assets/vendor/fancybox/fancybox/fancybox.css');
+            $this->page->addJs('assets/vendor/fancybox/fancybox/fancybox.umd.js', ['defer' => true]);
+            $this->page->addJs('/plugins/publipresse/messages/assets/fancybox.js', ['defer' => true]);
+        }
     }
 }
